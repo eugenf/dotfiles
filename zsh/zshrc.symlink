@@ -1,8 +1,15 @@
+plugins=(git osx brew sublime composer)
+
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/Code
+export PROJECTS=~/Sites
+
+export SVN_EDITOR=vim
+
+# add phpbrew configuration
+source ~/.phpbrew/bashrc
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
