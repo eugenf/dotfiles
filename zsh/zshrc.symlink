@@ -9,7 +9,7 @@ export PROJECTS=~/Sites
 export SVN_EDITOR=vim
 
 # add phpbrew configuration
-source ~/.phpbrew/bashrc
+# source ~/.phpbrew/bashrc
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
