@@ -7,6 +7,10 @@ then
   alias l="gls -lAh --color"
   alias ll="gls -l --color"
   alias la='gls -A --color'
+else
+  alias l="ls -lAh --color"
+  alias ll="ls -l --color"
+  alias la='ls -A --color'
 fi
 
 cd() { builtin cd "$@"; l; }               # Always list directory contents upon 'cd'
