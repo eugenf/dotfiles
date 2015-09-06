@@ -8,8 +8,7 @@ export PROJECTS=~/Sites
 
 export SVN_EDITOR=vim
 
-# add phpbrew configuration
-# source ~/.phpbrew/bashrc
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
