@@ -57,6 +57,13 @@ directory_name() {
 # export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
 export PROMPT=$'\nin $(directory_name) $(git_dirty)$(need_push)\n› '
 
+battery_status() {
+  if [[ $(sysctl -n hw.model) == *"Book"* ]]
+  then
+    $ZSH/bin/battery-status
+  fi
+}
+
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
