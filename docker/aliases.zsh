@@ -49,26 +49,24 @@ function dlab {
  docker ps --filter="label=$1" --format="{{.ID}}"
 }
 
-function dips-fn {
-  docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
-}
 
-
-alias d='docker $*'
-alias d-c='docker-compose $*'
-alias dcu="docker-compose up -d"
-alias dcd="docker-compose down"
-alias dex=dex-fn
-alias di=di-fn
-alias dim="docker images"
-alias dip=dip-fn
-alias dl=dl-fn
-alias dnames=dnames-fn
-alias dps="docker ps"
-alias dpsa="docker ps -a"
-alias drmc="docker rm $(docker ps --all -q -f status=exited)"
-alias drmid="docker rmi $( docker images -q -f dangling=true)"
-alias drun=drun-fn
-alias dsr=dsr-fn
-alias dips="dips-fn"
-
+if [ -x "$(command -v docker)" ]; then
+  alias d='docker $*'
+  alias d-c='docker-compose $*'
+  alias dcu="docker-compose up -d"
+  alias dcs="docker-compose stop"
+  alias dcd="docker-compose down"
+  alias dex=dex-fn
+  alias di=di-fn
+  alias dim="docker images"
+  alias dip=dip-fn
+  alias dl=dl-fn
+  alias dnames=dnames-fn
+  alias dps="docker ps"
+  alias dpsa="docker ps -a"
+  alias drmc="docker rm $(docker ps --all -q -f status=exited)"
+  alias drmid="docker rmi $( docker images -q -f dangling=true)"
+  alias drun=drun-fn
+  alias dsr=dsr-fn
+  alias dcui="dcu && dip"
+fi
